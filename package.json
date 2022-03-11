@@ -1,0 +1,15 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "a todo list for daily affairs and planning",
+  "main": "index.js",
+  "scripts": {
+    "start" : "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sukhman",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
