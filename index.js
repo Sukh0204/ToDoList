@@ -3,7 +3,8 @@ const app=express();
 const port=7000;
 
 app.set('view engine', 'ejs');
-app.set('view', './views');
+app.set('views', './views');
+app.use(express.static('./assests'));
 
 app.use('/', require('./routes'));
 
