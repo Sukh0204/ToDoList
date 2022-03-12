@@ -2,10 +2,14 @@ const express= require('express');
 const app=express();
 const port=7000;
 
+app.set('view engine', 'ejs');
+app.set('view', './views');
+
 app.use('/', require('./routes'));
 
 const router = require('./routes');
 const routerNext=require('./routes/users');
+const routreNew=require('./routes/posts');
 
 
 app.listen(port, function(err){
