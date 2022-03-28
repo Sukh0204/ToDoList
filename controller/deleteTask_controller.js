@@ -16,6 +16,15 @@ module.exports.del=function(req, res)
             }
         });
     }
+    else if(typeof Check_id === "object"){
+        for(var i = 0 ; i < Check_id.length ; i++){
+            Item.findByIdAndDelete(Check_id[i], function(err){
+                if(err){
+                    console.log('error');
+                    return;
+                }
+            });
+        }
+    }
     return res.redirect('back');}
 
-    
