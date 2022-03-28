@@ -1,13 +1,90 @@
 <html>
     <head>
         <title>
-            Home Page
+            Home Page- TODO 
         </title>
+        <link rel="stylesheet" href="/css/layout.css">
     </head>
     <body>
-        <p>
-            ejs file added yaayyy!
-            Controllers and routes are also running well!
-        </p>
+        
+            <h1>TODO App</h1>
+            <h3>Your personal task manager and tracker</h3>
+            <p>
+                Add your tasks and and finish them #beProductive!
+            </p>
+      
+        <form action="/add-task" method="POST">
+            Description: 
+            <input type="text" name="Description" placeholder="What do you need to do?" required></br>
+            Category: 
+            <input type="text" name="Category" placeholder="Choose a category">
+            Due Date: 
+            <input type="date" name="Date" placeholder="dd/mm/yyyy" >
+        </br>
+     
+            <button type="submit">Add Task</button>
+            
+        </form>
+     <!--
+           <button type="delete"><a href="/delete-task" class="btn btn-primary">Delete</a></button> 
+     -->   
+    
+    
+        <!--add a table (in form format so as to take input) to add tasks, select category- will add a label and date-->
+        <!--Then add buttons to add tasks or delete a task-->
+        <table id="show_tasks">
+            <!-- maybe define i in global context?? and need a form -->
+            <form action="/delete-task" method="POST">
+                <%for(let i of task_list){%>
+                    <div class="tasks">
+                <tr>
+                    <td rowspan="2" id="check">
+                        <input type="checkbox" name="check" value="<%= i._id %>">
+                        
+                    </td>
+                        
+                    <td id="desc">
+                        <p><%= i.Description %></p>
+                    </td>
+                    <td rowspan="2" id="cat">
+                        <p><%= i.Category %></p>
+                    </td>
+                    <td>
+                        <button type="delete">Delete</button> 
+                    </td>
+                </tr>
+                <tr>
+                    <td id="date">
+                        <p><%= i.Date %></p>
+                    </td>
+                </tr>
+            </div>
+            <%}%>
+            </form>
+           
+        </table>
+        
+        <script type="text/javascript" src="C:\Users\skkau\OneDrive\Desktop\Jquery\jquery.min">
+
+        </script>
+<!--
+        <script>
+            $.ajax({
+      method:'DELETE',
+      url:'/tasks/' + $("#link").attr('data-mongo-id'),
+
+        success : function( data) {
+          console.log('success);
+       },
+      error : function() {
+        console.log('error');
+
+      }
+    })
+            </script>
+        -->
+        <!--finally display the list of to dos in table format neeche and an option to check them as done-->
+        <!--this can be done by having an array i supoose-->
+        <!--that's all ;)))-->
     </body>
 </html>

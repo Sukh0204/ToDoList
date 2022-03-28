@@ -1,0 +1,14 @@
+<%for(let i of task_list){%>
+            <div class="tasks">
+                <!--do in table format-->
+                     <input type="checkbox" name="check" value="abc">
+                    <p><%= i.Description %></p>
+                    <p><%= i.Category %></p>
+                    <p><%= i.Date %></p>
+                    <!-- <button type="delete"><a href="/delete-task/?id=<%= i._id %>">Delete</a></button> -->
+            </div>
+        <%}%>
+    </form>
+
+    from <home class="ejs"></home>
+    

@@ -1,0 +1,30 @@
+body{
+    text-align: center;
+    color: #383838;
+}
+
+#show_tasks{
+    
+    margin-left:auto;
+    margin-right: auto;
+    border-top:1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+#desc{
+    font-size:medium;
+}
+
+#cat{
+    font-size:15 px;
+    border-bottom:1px solid gray;
+}
+
+#date{
+    font-size:small;
+    border-bottom:1px solid gray;
+}
+
+#check{
+    border-bottom:1px solid gray;
+}
